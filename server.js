@@ -3,7 +3,6 @@ const { MongoClient } = require('mongodb');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
 
 // MongoDB Connection Details
 const uri = "mongodb+srv://wilsonskin:abc@cluster0.27e6i.mongodb.net/test?retryWrites=true&w=majority";
@@ -42,6 +41,9 @@ app.get('/search', async (req, res) => {
     }
 });
 
+// Start the Server
+const port = process.env.PORT || 3000; // Use Heroku's dynamic PORT or default to 3000
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
+
 });
