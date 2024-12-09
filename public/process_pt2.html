@@ -60,7 +60,8 @@
             console.log(`Searching for ${type}: ${query}`);
     
             try {
-                const response = await fetch(`http://localhost:3000/search?query=${encodeURIComponent(query)}&type=${encodeURIComponent(type)}`);
+                // Adjusted to use the current Heroku-hosted backend
+                const response = await fetch(`/search?query=${encodeURIComponent(query)}&type=${encodeURIComponent(type)}`);
                 const results = await response.json();
     
                 const resultsContainer = document.getElementById('results');
@@ -84,7 +85,7 @@
         }
     
         fetchResults();
-    </script>
+    </script>    
     
 </body>
 </html>
