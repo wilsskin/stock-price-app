@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .results-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Search Results</h1>
+        <ul id="results"></ul>
+    </div>
+
+    <script>
+        async function fetchResults() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            const type = urlParams.get('type');
+    
+            if (!query || !type) {
+                document.getElementById('results').innerHTML = `<li>Invalid search query. Please go back and try again.</li>`;
+                return;
+            }
+    
+            console.log(`Searching for ${type}: ${query}`);
+    
+            try {
+                const response = await fetch(`http://localhost:3000/search?query=${encodeURIComponent(query)}&type=${encodeURIComponent(type)}`);
+                const results = await response.json();
+    
+                const resultsContainer = document.getElementById('results');
+                if (results.length > 0) {
+                    results.forEach((result) => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `
+                            <strong>Name:</strong> ${result.company} <br>
+                            <strong>Ticker:</strong> ${result.ticker} <br>
+                            <strong>Price:</strong> $${result.price.toFixed(2)}
+                        `;
+                        resultsContainer.appendChild(listItem);
+                    });
+                } else {
+                    resultsContainer.innerHTML = `<li>No results found for your search.</li>`;
+                }
+            } catch (error) {
+                console.error('Error fetching results:', error);
+                document.getElementById('results').innerHTML = `<li>Error fetching results. Please try again later.</li>`;
+            }
+        }
+    
+        fetchResults();
+    </script>
+    
+</body>
+</html>
