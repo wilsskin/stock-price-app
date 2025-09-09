@@ -23,7 +23,7 @@ The Stock Price App is a simple web application built for my CS 20 Web Programmi
 ---
 
 ### Under the Hood
-Watch MongoDB Walkthrough </br>
+MongoDB Walkthrough Video</br>
 Link: https://drive.google.com/file/d/1DhdPm9R0l_WUtBf7LgfMbROqN-p3hWJt/view?usp=sharing
 
 This short video shows me clearing the `PublicCompanies` collection, running my app, and verifying that the database is repopulated with new stock data.
