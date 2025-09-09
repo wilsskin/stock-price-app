@@ -1,14 +1,14 @@
 # Stock Price App
 
 ### Overview
-The Stock Price App is a lightweight web application built for my CS 20 Web Programming course. It demonstrates back-end and front-end integration using Node.js and CSV data parsing.
+The Stock Price App is a simple web application built for my CS 20 Web Programming course. It demonstrates full-stack integration by parsing CSV data on a server and returning results to a client-side interface.
 
 ---
 
 ### What It Does
 - **Reads stock data** from a CSV file containing company names and prices  
 - **Runs a Node.js server** (`server.js`) that loads the CSV and serves requests  
-- **Uses client-side JavaScript** (`pt1.js`) to send input from the UI and display results  
+- **Implements client-side JavaScript** (`pt1.js`) to handle input and display results  
 - **Returns the matching stock price** for the company entered by the user  
 
 ---
@@ -18,4 +18,4 @@ The Stock Price App is a lightweight web application built for my CS 20 Web Prog
 - **JavaScript** – client-side script for making requests and updating the UI  
 - **HTML/CSS** – structure and styling for the front end  
 - **CSV file** – source of company and stock price data  
-- **Procfile** – for easy deployment on hosting platforms (website url now expired)
+- **Procfile** – configuration for deployment on platforms like Heroku *(deployment now expired)*  
