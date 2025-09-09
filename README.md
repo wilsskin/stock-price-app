@@ -23,12 +23,13 @@ The Stock Price App is a lightweight web application built for my CS 20 Web Prog
 ---
 
 ### Project Structure
+```plaintext
 .
-├── server.js # Node server that reads the CSV and serves endpoints/pages
-├── pt1.js # Client-side script for fetching/displaying results
-├── public/ # Static assets / UI
-├── companies-1.csv # Company + price data
-├── package.json # App metadata and scripts
-├── package-lock.json # Locked deps
-├── Procfile # Deployment process definition
+├── server.js          # Node server that reads the CSV and serves endpoints/pages
+├── pt1.js             # Client-side script for fetching/displaying results
+├── public/            # Static assets / UI
+├── companies-1.csv    # Company + price data
+├── package.json       # App metadata and scripts
+├── package-lock.json  # Locked deps
+├── Procfile           # Deployment process definition
 └── .gitignore
