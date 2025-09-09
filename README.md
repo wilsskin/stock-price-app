@@ -1,7 +1,7 @@
 # Stock Price App
 
 ### Overview
-The Stock Price App is a simple web application built for my CS 20 Web Programming course. It demonstrates full-stack integration by parsing CSV data on a server and returning results to a client-side interface.
+The Stock Price App is a simple web application built for my CS 20 Web Programming course. It demonstrates full-stack integration by parsing CSV data on MongoDB and returning results to a client-side interface.
 
 ---
 
@@ -19,3 +19,11 @@ The Stock Price App is a simple web application built for my CS 20 Web Programmi
 - **HTML/CSS** – structure and styling for the front end  
 - **CSV file** – source of company and stock price data  
 - **Procfile** – configuration for deployment on platforms like Heroku *(deployment now expired)*  
+
+---
+
+### Under the Hood
+Watch MongoDB Walkthrough
+LINK: https://drive.google.com/file/d/1DhdPm9R0l_WUtBf7LgfMbROqN-p3hWJt/view?usp=sharing
+
+This short video shows me clearing the `PublicCompanies` collection, running my app, and verifying that the database is repopulated with new stock data.
